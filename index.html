@@ -18,9 +18,9 @@
             line-height: 1.6;
         }
         :root {
-            --primary-color: #ff5722;
+            --primary-color: linear-gradient(90deg, rgba(107,213,136,0.7849264705882353) 28%, rgba(48,223,193,0.4151785714285714) 41%, rgba(71,197,218,0.4908088235294118) 100%);;
             --secondary-color: #4caf50;
-            --background-color: #f5f5f5;
+            --background-color: rgb(94, 234, 178);
             --text-color: #333;
         }
         nav {
@@ -32,7 +32,7 @@
             align-items: center;
             background: var(--primary-color);
             padding: 10px 20px;
-            color: white;
+            color: red;
         }
 
         nav ul {
@@ -45,7 +45,7 @@
         }
 
         nav ul li a {
-            color: white;
+            color: red;
             text-decoration: none;
             font-weight: bold;
         }
@@ -57,7 +57,7 @@
         }
 
         .hamburger div {
-            background: white;
+            background: orangered;
             height: 3px;
             margin: 5px;
             width: 25px;
@@ -131,7 +131,7 @@
         }
 
         .project img {
-            width: 100%;
+            width: 80%;
             border-radius: 5px;
         }
 
@@ -139,11 +139,11 @@
             text-align: center;
             padding: 20px;
             background: var(--primary-color);
-            color: white;
+            color: red;
         }
 
         footer a {
-            color: white;
+            color: red;
             text-decoration: none;
         }
 
@@ -166,7 +166,8 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="Resume.pdf" download target="_blank">Resume</a></li>
+            <li><a href="DivyamChitransh-FrontendDeveloper(React)-fr76.pdf" id="download-link" target="_blank">Resume</a></li>
+
 
         </ul>
     </nav>
@@ -213,28 +214,8 @@
         <div class="projects">
             <div class="project">
                 <h2>Project 1</h2>
-                <h3>Learning Management System.</h3>
-                <p>In this I have implemented a Learning Management System using Node,Express and mongoDB. This is my basic backend project. It is to track the records of users and courses.</p>
-                <h3>Tech Stack</h3>
-                <p>Node.js</p>
-                <p>Express</p>
-                <p>mongoDB</p>
-
-                <a href="https://github.com/DivyamChitransh/Project_1" >GitHub</a> | <a href="https://divyamchitransh.github.io/Project_1/" >Demo</a>
-            </div>
-            <div class="project">
-                <h2>Project 2</h2>
-                <h3>Job Board</h3>
-                <p>In this I have implemented a job board Management system using Node,express and mongoDB as backend project which consists of jobseekers, employers , job postings , job applications and analytics.</p>
-                <h3>Tech Stack</h3>
-                <p>Node.js</p>
-                <p>Express</p>
-                <p>mongoDB</p>
-                <a href="https://github.com/DivyamChitransh/Project-2" >GitHub</a> | <a href="https://divyamchitransh.github.io/Project-2/" >Demo</a>
-            </div>
-            <div class="project">
-                <h2>Project 3</h2>
                 <h3>FaceBook Clone</h3>
+                <img src="facebook.png">
                 <p>It is the Front_End project in which I implemented a clone of facebook.</p>
                 <h3>Tech Stack</h3>
                 <p>HTML</p>
@@ -243,8 +224,9 @@
                 <a href="https://github.com/DivyamChitransh/Project_3" >GitHub</a> | <a href="https://splendorous-duckanoo-efcf4f.netlify.app/index.html" >Demo</a>
             </div>
             <div class="project">
-                <h2>Project 4</h2>
+                <h2>Project 2</h2>
                 <h3>File Management System</h3>
+                <img src="file_management.png">
                 <p>It is also a Front_End project in which i have implemented a file Management system to track tha files and folders in the system and sort them according to their types like(.txt,.pdf,etc.) in files and folders seprately.</p>
                 <h3>Tech Stack</h3>
                 <p>HTML</p>
@@ -266,6 +248,15 @@
         function toggleMenu() {
             document.querySelector('nav ul').classList.toggle('show');
         }
+  document.getElementById('download-link').addEventListener('click', function (event) {
+    const link = document.createElement('a');
+    link.href = this.href;
+    link.download = 'Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
     </script>
 </body>
 </html>
